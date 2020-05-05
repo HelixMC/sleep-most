@@ -78,7 +78,6 @@ public class OnSleep implements Listener {
 		// check if player is cooling down, if not send message to world and start cooldown of player
 		if(cooldownService.cooldownEnabled() && !cooldownService.isCoolingDown(player)){
 			messageService.sendPlayerLeftMessage(player, sleepService.getSleepSkipCause(world));
-			Title.sendTitle(player, 20, 60, 20, ChatColor.GOLD + "You have awoken the sun", "");
 			cooldownService.startCooldown(player);
 		}
 
@@ -99,5 +98,6 @@ public class OnSleep implements Listener {
 		}
 
 		sleepService.resetDay(world);
+		Title.sendTitle(player, 20, 60, 20, ChatColor.GOLD + "You have awoken the sun", "");
 	}
 }
