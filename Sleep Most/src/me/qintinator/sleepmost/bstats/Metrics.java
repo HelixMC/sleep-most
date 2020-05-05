@@ -657,7 +657,7 @@ public class Metrics {
             }
             for (Map.Entry<String, Integer> entry : map.entrySet()) {
                 JsonArray categoryValues = new JsonArray();
-                categoryValues.add(entry.getValue());
+                //categoryValues.add(entry.getValue());
                 values.add(entry.getKey(), categoryValues);
             }
             data.add("values", values);
@@ -701,7 +701,7 @@ public class Metrics {
                 allSkipped = false;
                 JsonArray categoryValues = new JsonArray();
                 for (int categoryValue : entry.getValue()) {
-                    categoryValues.add(categoryValue);
+                    //categoryValues.add(categoryValue);
                 }
                 values.add(entry.getKey(), categoryValues);
             }

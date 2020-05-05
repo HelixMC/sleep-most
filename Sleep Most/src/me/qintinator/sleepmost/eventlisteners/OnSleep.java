@@ -4,6 +4,8 @@ import me.qintinator.sleepmost.enums.ConfigMessage;
 import me.qintinator.sleepmost.interfaces.*;
 import me.qintinator.sleepmost.runnables.NightcycleAnimationTimer;
 import me.qintinator.sleepmost.statics.DataContainer;
+import me.qintinator.sleepmost.titleapi.Title;
+import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -76,6 +78,7 @@ public class OnSleep implements Listener {
 		// check if player is cooling down, if not send message to world and start cooldown of player
 		if(cooldownService.cooldownEnabled() && !cooldownService.isCoolingDown(player)){
 			messageService.sendPlayerLeftMessage(player, sleepService.getSleepSkipCause(world));
+			Title.sendTitle(player, 20, 60, 20, ChatColor.GOLD + "You have awoken the sun", "");
 			cooldownService.startCooldown(player);
 		}
 
